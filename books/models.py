@@ -42,3 +42,16 @@ class User(AbstractBaseUser, PermissionsMixin):
         Sends an email to this User.
         '''
         #(subject, message, from_email, [self.email], **kwargs)
+
+class Book(models.Model):
+    title = models.CharField(max_length=255)
+    # autho
+    short_desc = models.CharField(max_length=100)
+    desc = models.TextField()
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('books/book_detail.html', args=[str(self.id)])

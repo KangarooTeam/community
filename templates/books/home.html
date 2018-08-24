@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for post in object_list %}
+        <div class="book-entry">
+            <h2><a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a></h2>
+            <p>{{ book.short_desc }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

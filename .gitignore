@@ -1,1 +1,8 @@
 myvenv/
+
+db.sqlite3
+
+books/migrations/
+books/__pycash__/
+
+quest/__pycash__/
