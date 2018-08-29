@@ -3,12 +3,10 @@ import json
 
 from settings import settings
 from mainFunctions import make_request
-
-params = {
-    "access_token": settings["token"]
-}
-
-user_search = make_request("users.get", settings, params)
+from params import params_users_get
 
 
-print(user_search)
+users_get = make_request("users.get", settings, params_users_get)
+
+
+print(users_get)
